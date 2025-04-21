@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring System</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-heartbeat"></i> Health Monitoring System</h1>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/dashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="/chatbot"><i class="fas fa-robot"></i> Health Advisor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="welcome">
+                <h2>Welcome to Your Health Monitoring System</h2>
+                <p>This system monitors your health metrics in real-time, analyzes the data using machine learning, and provides personalized recommendations through an AI-powered health advisor.</p>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Real-time Monitoring</h3>
+                    <p>View your vital signs and health metrics collected from sensors in real-time.</p>
+                    <a href="/dashboard" class="btn">View Dashboard</a>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Analysis</h3>
+                    <p>Advanced machine learning models analyze your vitals and facial expressions for comprehensive health assessment.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Health Advisor</h3>
+                    <p>Get personalized health recommendations, exercise suggestions, and dietary advice from the AI health advisor.</p>
+                    <a href="/chatbot" class="btn">Ask Health Advisor</a>
+                </div>
+            </section>
+
+            <section class="latest-stats">
+                <h2>Your Latest Health Stats</h2>
+                <div id="latest-data" class="stats-container">
+                    <p>Loading latest health data...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Health Monitoring System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html> 

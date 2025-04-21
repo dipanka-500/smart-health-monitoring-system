@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Dashboard - Health Monitoring System</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-heartbeat"></i> Health Monitoring System</h1>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="/chatbot"><i class="fas fa-robot"></i> Health Advisor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="dashboard-header">
+                <h2>Health Dashboard</h2>
+                <p>View your health metrics and machine learning analysis results</p>
+                <div class="refresh-control">
+                    <button id="refresh-btn" class="btn"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+                    <span id="last-updated">Last updated: Never</span>
+                </div>
+            </section>
+            
+            <section class="dashboard-summary">
+                <div class="summary-card">
+                    <h3>Risk Assessment</h3>
+                    <div id="risk-level" class="status-indicator">
+                        <span class="value">Unknown</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>Emotional State</h3>
+                    <div id="facial-expression" class="status-indicator">
+                        <span class="value">Unknown</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>Combined Assessment</h3>
+                    <div id="combined-assessment" class="status-indicator">
+                        <span class="value">Unknown</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="vitals-grid">
+                <div class="vital-card">
+                    <h3><i class="fas fa-heartbeat"></i> Heart Rate</h3>
+                    <div id="heart-rate" class="vital-value">-- bpm</div>
+                    <canvas id="heart-rate-chart" class="vital-chart"></canvas>
+                </div>
+                
+                <div class="vital-card">
+                    <h3><i class="fas fa-wind"></i> Blood Oxygen</h3>
+                    <div id="spo2" class="vital-value">-- %</div>
+                    <canvas id="spo2-chart" class="vital-chart"></canvas>
+                </div>
+                
+                <div class="vital-card">
+                    <h3><i class="fas fa-thermometer-half"></i> Temperature</h3>
+                    <div id="temperature" class="vital-value">-- °C</div>
+                    <canvas id="temperature-chart" class="vital-chart"></canvas>
+                </div>
+                
+                <div class="vital-card">
+                    <h3><i class="fas fa-lungs"></i> Respiratory Rate</h3>
+                    <div id="respiratory-rate" class="vital-value">-- breaths/min</div>
+                    <canvas id="respiratory-chart" class="vital-chart"></canvas>
+                </div>
+                
+                <div class="vital-card">
+                    <h3><i class="fas fa-stethoscope"></i> Blood Pressure</h3>
+                    <div id="blood-pressure" class="vital-value">--/-- mmHg</div>
+                    <canvas id="bp-chart" class="vital-chart"></canvas>
+                </div>
+                
+                <div class="vital-card">
+                    <h3><i class="fas fa-weight"></i> BMI</h3>
+                    <div id="bmi" class="vital-value">--</div>
+                    <div id="bmi-classification" class="vital-sub-value">Unknown</div>
+                </div>
+            </section>
+            
+            <section class="history-section">
+                <h2>Health History</h2>
+                <div class="history-controls">
+                    <select id="history-timeframe">
+                        <option value="day">Last 24 Hours</option>
+                        <option value="week">Last 7 Days</option>
+                        <option value="month">Last 30 Days</option>
+                    </select>
+                </div>
+                <div class="history-chart-container">
+                    <canvas id="history-chart"></canvas>
+                </div>
+                <div class="history-table-container">
+                    <table id="history-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Heart Rate</th>
+                                <th>SpO2</th>
+                                <th>Temp</th>
+                                <th>BP</th>
+                                <th>Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Health Monitoring System. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="static/js/dashboard.js"></script>
+</body>
+</html>
