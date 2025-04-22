@@ -8,7 +8,7 @@ An IoT + AI-powered health monitoring system that collects patient vitals using 
 
 
 health_monitoring_system/
-├── server.py           # Flask backend server
+├── main.py           # Flask backend server
 ├── templates/          # HTML template files
 │   ├── index.html      # User data input page
 │   ├── dashboard.html  # Health dashboard visualization
